@@ -1,0 +1,19 @@
+@use './sass/helper/vars' as *;
+@use './sass/helper/mixin' as *;
+@use './sass/helper/function' as *;
+@use './sass/helper/animi' as *;
+
+@use './sass/global/global.scss';
+
+@use './sass/componnet/button';
+@use './sass/componnet/header';
+@use './sass/componnet/footer';
+@use './sass/componnet/setting' as *;
+
+@use './sass/pages/landing';
+@use './sass/pages/intro';
+@use './sass/pages/business';
+@use './sass/pages/circle-img';
+@use './sass/pages/mangers';
+@use './sass/pages/structures-word';
+@use './sass/pages/contact';

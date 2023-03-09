@@ -1,0 +1,72 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+.landing {
+	position: relative;
+	text-transform: capitalize;
+	&::after {
+		@extend %fake;
+		height: 100%;
+		width: 50%;
+		background-color: $redColor;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%);
+		z-index: -1;
+		@include media(mop) {
+			left: 40%;
+		}
+	}
+	.container {
+		display: flex;
+		flex-flow: column wrap;
+		.text {
+			color: $text-S-Color;
+			background-color: $back-Dark-Color;
+			padding: $deg-50 calc($deg-50 / 2);
+			z-index: 3;
+			position: relative;
+			width: 45%;
+			@include media(mop) {
+				width: 90%;
+				padding: 30px 20px;
+			}
+			h1 {
+				margin: $deg-10 0px;
+			}
+			h1,
+			h3 {
+				@include media(mop) {
+					font-weight: 400;
+				}
+			}
+		}
+		.img-holder {
+			position: relative;
+			z-index: 1;
+			margin : {
+				right: -15px;
+				top: -$deg-50;
+			}
+			width: 70%;
+			align-self: flex-end;
+			@include media(mop) {
+				margin-right: -30px;
+				width: 90%;
+			}
+		}
+		.card-holder {
+			row-gap: 20px;
+			top: -50px;
+			.card {
+				background-color: $full-white;
+				padding: 25px;
+				.icon {
+					i {
+						color: $blueColor;
+					}
+				}
+			}
+		}
+	}
+}

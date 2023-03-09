@@ -1,0 +1,91 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+.structures {
+	position: relative;
+	background-color: $full-white;
+	@include media(mop) {
+		padding-bottom: 35%;
+	}
+	&::before {
+		@extend %fake;
+		background-color: $redColor;
+		width: 100%;
+		height: 50%;
+		top: -45%;
+		left: 0;
+		@include media(mop) {
+			height: 25%;
+			top: 0;
+		}
+		@include media(med) {
+			top: -25%;
+		}
+	} //before
+	.container {
+		position: relative;
+		padding: $deg-50 calc($deg-50 * 2);
+		background-color: $back-White-Color;
+		transform: translateY(-15%);
+		display: flex;
+		flex-flow: column wrap;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		gap: 20px;
+		@include media(med) {
+			transform: translateY(0);
+		} //medium screen
+		@include media(mop) {
+			transform: translateY(10%);
+			padding: 50px 0;
+		} //mobile
+
+		.img-holder {
+			transform: translateY(-30%);
+			@include media(mop) {
+				transform: translateY(-25%);
+			} //mobile
+			img {
+				@include media(mop) {
+					max-width: 80%;
+					margin-bottom: 10%;
+				}
+			}
+		}
+		h3 {
+			font-size: 48px;
+			margin-top: -20%;
+			@include media(mop) {
+				font-size: 33px;
+				font-weight: 500;
+			}
+			@include media(med) {
+				font-size: 40px;
+				font-weight: 500;
+			}
+		}
+		p:first-of-type {
+			font-size: 20px;
+			@include media(mop) {
+				padding: 0 50px;
+			}
+		}
+	} //container
+}
+.word {
+	background-color: $full-white;
+	.container {
+		gap: 25px;
+		width: 80%;
+		align-items: flex-start;
+		.card {
+			h1 {
+				font-size: 34px;
+			}
+			@include media(med) {
+				flex-basis: 30%;
+			}
+		}
+	}
+}

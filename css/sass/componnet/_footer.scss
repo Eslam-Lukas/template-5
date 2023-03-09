@@ -1,0 +1,73 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+footer {
+	min-height: 100px;
+	background-color: $back-Dark-Color;
+	text-transform: capitalize;
+	.container {
+		@include flex(space-between, center);
+		flex-flow: row wrap;
+		padding: 20px;
+		text-align: center;
+		.icons {
+			background-color: #607d8b;
+			padding: $deg-10;
+			border-radius: 10px;
+			color: $full-white;
+			transition: $main-transition;
+
+			.find {
+				color: inherit;
+				margin-bottom: $deg-10;
+			}
+			i {
+				cursor: pointer;
+				transition: $main-transition;
+				margin: {
+					bottom: $deg-20;
+					top: $deg-20;
+					left: $deg-10;
+				}
+				&.facebook {
+					color: #4867aa;
+				}
+				&.github {
+					color: black;
+				}
+				&.instagram {
+					color: orangered;
+				}
+				&.twitter {
+					color: #1da1f2;
+				}
+				&.linkedin {
+					color: #006699;
+				}
+				&.google {
+					color: yellow;
+				}
+				&.whatsapp {
+					color: green;
+				}
+				&:hover {
+					color: $full-white;
+					transform: translatey(-5px) rotate(1turn);
+				}
+			} //i
+			&:hover {
+				color: black;
+			}
+		} //.icons
+		.link {
+			color: black;
+			a {
+				font-weight: bold;
+				color: blue;
+			}
+			i {
+				color: greenyellow;
+			}
+		}
+	}
+}

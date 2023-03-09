@@ -1,0 +1,56 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+.business {
+	.container {
+		@include flex(space-between, center);
+		gap: $deg-20;
+		@include media(mop) {
+			@include mopdir();
+			width: 80%;
+		} //mobile media
+		.offer {
+			flex-basis: 45%;
+			@include flex(space-between, center);
+			@include mopdir();
+			gap: $deg-20;
+			@include media(mop) {
+			} //mobile media
+			&.one {
+				.text-holder {
+					h2 {
+						@include media(mop) {
+							margin-bottom: $deg-10;
+							letter-spacing: 1.2px;
+						} //mobile media
+					}
+					p {
+						@include media(mop) {
+							line-height: 1.8;
+						} //mobile media
+					}
+				}
+				img {
+					max-width: 75%;
+				}
+				.img-copy,
+				.main-btn {
+					align-self: flex-start;
+				}
+			} //one
+			&.two {
+				.img-holder {
+					justify-content: flex-end;
+					display: flex;
+					img {
+						max-width: 75%;
+						align-self: flex-end;
+					}
+				}
+				.text-holder {
+					align-self: flex-start;
+				} //textHolder
+			} //two
+		} //offer
+	} //container
+}

@@ -1,0 +1,13 @@
+@use './vars' as *;
+@use './mixin' as *;
+
+@include animi(blink) {
+	0% {
+		background-color: $redColor;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		background-color: $blueColor;
+	}
+}

@@ -1,0 +1,110 @@
+@use '../helper/vars' as *;
+@use '../helper/mixin' as *;
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+}
+body {
+	background-color: $back-White-Color;
+}
+
+.container {
+	width: 80%;
+	margin: 0px auto;
+	padding: 50px 0;
+}
+.active {
+	color: $blueColor !important;
+}
+%fake {
+	content: '';
+	position: absolute;
+}
+.img-copy {
+	text-transform: capitalize;
+	a {
+		text-transform: capitalize;
+		text-decoration: underline;
+		color: inherit;
+	}
+}
+.card-holder {
+	position: relative;
+	z-index: 3;
+	@include flex(space-between, center);
+	flex-wrap: wrap;
+	@include media(mop) {
+		@include mopdir();
+	}
+	transition: $main-transition;
+	.card {
+		flex-basis: 23%;
+		@include flex(space-between, center);
+		flex-flow: column wrap;
+		row-gap: 25px;
+		border-radius: $deg-10;
+		&:hover {
+			@include triple-shadow();
+		}
+		@include media(med) {
+			flex-basis: 45%;
+			row-gap: $deg-50;
+			align-items: flex-start;
+		}
+		transition: $main-transition;
+	}
+}
+.img-holder {
+	img {
+		max-width: 100%;
+	}
+}
+.circle {
+	border-radius: 50%;
+}
+.text-holder {
+	.text {
+		p {
+			display: flex;
+			margin-bottom: $deg-10;
+			.icon {
+				margin-right: $deg-20;
+				i {
+					color: $redColor;
+				}
+			}
+		}
+	}
+}
+i {
+	&.facebook {
+		color: #4867aa;
+	}
+	&.github {
+		color: black;
+	}
+	&.instagram {
+		color: orangered;
+	}
+	&.twitter {
+		color: #1da1f2;
+	}
+	&.linkedin {
+		color: #006699;
+	}
+	&.google {
+		color: yellow;
+	}
+	&.whatsapp {
+		color: green;
+	}
+	&.fa-brands:hover {
+		color: $full-white;
+		transform: translatey(-5px) rotate(1turn);
+	}
+	transition: $main-transition;
+} //i

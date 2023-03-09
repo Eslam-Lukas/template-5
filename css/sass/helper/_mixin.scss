@@ -1,0 +1,45 @@
+@use './vars' as *;
+@mixin flex($justify, $align) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+}
+@mixin triple-shadow {
+	box-shadow: 1px 1px $redColor, 3px 3px $back-White-Color, 5px 5px black !important;
+}
+@mixin media($screen) {
+	@if $screen == mop {
+		@media (max-width: 767px) {
+			@content;
+		}
+	} @else if $screen == med {
+		@media (min-width: 768px) and (max-width: 991px) {
+			@content;
+		}
+	} @else if $screen == large {
+		@media (min-width: 992px) and (max-width: 1199px) {
+			@content;
+		}
+	} @else if $screen == xxl {
+		@media (min-width: 1200px) {
+			@content;
+		}
+	}
+}
+@mixin mopdir {
+	width: 100%;
+	flex-flow: column wrap;
+	margin-bottom: $deg-10;
+}
+
+@mixin animi($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}

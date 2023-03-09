@@ -1,0 +1,35 @@
+:root {
+	--redColor: #db545a;
+	--blueColor: #478ac9;
+	--back-white-Color: #f2f2f2;
+	--back-Dark-Color: #425465;
+	--text-M-Color: #1a1a1a;
+	--text-S-Color: #ffffff;
+	--full-white: white;
+	//anim
+	--main-transition: 0.3s;
+	//control
+	--control-transition: 0.5s;
+	--control-color: white;
+	// --control-left: 20%;
+}
+$redColor: var(--redColor, #db545a);
+$blueColor: var(--blueColor, #478ac9);
+$back-White-Color: var(--back-white-Color, #f2f2f2);
+$back-Dark-Color: var(--back-Dark-Color, #425465);
+$text-M-Color: var(--text-M-Color, #1a1a1a);
+$text-S-Color: var(--text-S-Color, #ffffff);
+$full-white: var(--full-white, white);
+//anim
+$main-transition: var(--main-transition, 0.3s);
+//length
+$deg-10: 10px;
+$deg-20: 20px;
+$deg-30: 30px;
+$deg-40: 40px;
+$deg-50: 50px;
+
+//control
+$control-transition: var(--control-transition, 0.5s);
+$control-color: var(--control-color, white);
+// $control-left: var(--control-left, 20%);

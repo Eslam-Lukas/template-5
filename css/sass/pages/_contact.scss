@@ -1,0 +1,80 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+.contact {
+	.container {
+		@include flex(center, stretch);
+		flex-flow: row nowrap;
+		@include media(mop) {
+			flex-direction: column;
+		}
+		@include media(med) {
+			flex-direction: column;
+		}
+		> {
+			.form,
+			div {
+				flex-basis: calc(100% / 3);
+			} //allChildren
+			.form,
+			.info {
+				padding: $deg-30;
+			} //form + info
+			.img-holder {
+				@include media(mop) {
+					max-height: 50vh;
+					overflow: hidden;
+				}
+				@include media(med) {
+					max-height: 50vh;
+					overflow: hidden;
+				}
+			} //img
+			/////////////////
+			.form {
+				input:not([type='submit']),
+				textarea {
+					width: 100%;
+					height: 15%;
+					margin-bottom: $deg-10;
+					padding: $deg-10 $deg-20;
+					outline: none;
+					border: none;
+					border-bottom: 2px solid $back-Dark-Color;
+					box-shadow: 0 0 0 2px #ddd;
+					border-radius: 5px;
+					background-color: transparent;
+					@include media(mop) {
+						min-height: calc(50vh / 9);
+					}
+					@include media(med) {
+						min-height: calc(50vh / 9);
+					}
+				}
+				textarea {
+					height: 25%;
+					@include media(mop) {
+						min-height: calc(50vh / 4);
+					}
+					@include media(med) {
+						min-height: calc(50vh / 4);
+					}
+				}
+				input[type='submit'] {
+					width: 75%;
+					left: 12.5%;
+				}
+			}
+			.info {
+				background-color: $full-white;
+				div {
+					margin-bottom: $deg-10;
+					h3 {
+						margin-bottom: $deg-10;
+						color: $redColor;
+					}
+				}
+			}
+		} //children set
+	} //container
+} //contact

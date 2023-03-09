@@ -1,0 +1,28 @@
+@use '../helper/vars' as *;
+@use '../helper/mixin' as *;
+@use '../global/global' as *;
+.main-btn {
+	position: relative;
+	background-color: #db545a;
+	width: 150px;
+	font-weight: bold;
+	border: none;
+	color: $full-white;
+	padding: $deg-20 $deg-10;
+	transition: $main-transition;
+	cursor: pointer;
+	&::before {
+		content: 'learn more';
+		text-transform: uppercase;
+		position: absolute;
+		color: inherit;
+		width: 100%;
+		left: 0;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+	&:hover {
+		background-color: $blueColor;
+		color: $redColor;
+	}
+}

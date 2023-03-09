@@ -1,0 +1,171 @@
+@use '../helper/vars' as *;
+@use '../global/global' as *;
+@use '../helper/mixin' as *;
+// @use '../helper/animi' as *;
+
+%flex {
+	@include flex(center, center);
+	gap: 10px;
+	flex-wrap: wrap;
+}
+.hidden {
+	display: none !important;
+}
+.btn {
+	width: 30%;
+	height: 40px;
+	line-height: 40px;
+	color: black;
+	font-weight: bold;
+	cursor: pointer;
+	border-radius: 4px;
+
+	&.on {
+		background-color: green;
+	}
+	&.off {
+		background-color: red;
+	}
+}
+
+.control {
+	.container {
+		height: 100%;
+		padding: 0;
+		position: relative;
+	} //container
+	position: fixed;
+	top: 0;
+	left: -0%;
+	z-index: 10;
+	width: 20%;
+	height: 100%;
+	background-color: $control-color;
+	transition: $control-transition;
+	border-right: 2px solid rebeccapurple;
+	text-transform: capitalize;
+	@include media(mop) {
+		width: 50%;
+	} //media mop
+	.sect-handler {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 10px;
+		flex-wrap: wrap;
+		width: 100%;
+		h1 {
+			width: 80%;
+		}
+		i {
+			width: 10%;
+
+			&:hover {
+				transform: translateY(10px);
+				color: black;
+			}
+		}
+	} //sect-handler
+	h3 {
+		width: 100%;
+	}
+	h3,
+	span {
+		text-align: center;
+	}
+	span.active,
+	span:hover:not(.not) {
+		border: 2px solid black;
+		color: white !important;
+	}
+	i {
+		cursor: pointer;
+	} //global children
+	.sect {
+		@extend %flex;
+		margin-bottom: 10px;
+	}
+	.gear {
+		background-color: $control-color;
+		padding: 20px;
+		position: relative;
+		top: 10%;
+		left: 100%;
+		border: 2px solid rebeccapurple !important;
+		border-left: none !important;
+		cursor: pointer;
+		i {
+			color: $text-M-Color;
+		}
+	} //gear
+	.color {
+		@extend %flex;
+
+		.sit-content {
+			.group {
+				flex-basis: 100%;
+				@extend %flex;
+
+				span {
+					background-color: red;
+					width: 50px;
+					height: 50px;
+					cursor: pointer;
+					opacity: 0.5;
+					&.active,
+					&:hover {
+						border: 2px solid black;
+						opacity: 1;
+					}
+				}
+			} //group
+		} //content
+	} //color
+	.time {
+		gap: 0;
+
+		h1 {
+			flex: 30%;
+		}
+		span {
+			color: $text-M-Color;
+			background-color: $back-White-Color;
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			font-weight: bold;
+			line-height: 50px;
+			flex: 10%;
+			margin-left: 10px;
+			&#hour {
+				animation: blink 3600s linear infinite alternate;
+			}
+			&#min {
+				animation: blink 60s linear infinite alternate;
+			}
+			&#sec {
+				animation: blink 1s linear infinite alternate;
+			}
+		}
+	} //time
+	.ainmi {
+		.sit-content {
+			width: 100%;
+
+			@include flex(space-evenly, center);
+		}
+	}
+	.social-bar {
+		background-color: #607d8b;
+		bottom: 20px;
+		position: absolute;
+		h1 {
+			width: 100%;
+			padding-top: 15px;
+			text-align: center;
+		}
+		i.fa-brands {
+			padding: 15px;
+		}
+	}
+}
